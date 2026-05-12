@@ -8,6 +8,13 @@
       "when": 1778572177038,
       "tag": "0000_motionless_harrier",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1778595152753,
+      "tag": "0001_modern_elektra",
+      "breakpoints": true
     }
   ]
 }
