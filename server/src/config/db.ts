@@ -1,6 +1,14 @@
+import dotenv from "dotenv";
 import { drizzle } from "drizzle-orm/neon-http";
 import { neon } from "@neondatabase/serverless";
 
-const sql = neon(process.env.DATABASE_URL!);
+dotenv.config();
+
+const connectionString = process.env.DATABASE_URL;
+if (!connectionString) {
+  throw new Error("No database connection string was provided to `neon()`. Perhaps an environment variable has not been set?");
+}
+
+const sql = neon(connectionString);
 
 export const db = drizzle(sql);
