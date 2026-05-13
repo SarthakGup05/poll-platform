@@ -4,13 +4,13 @@ import bcrypt from "bcryptjs";
 
 import { eq } from "drizzle-orm";
 
-import { db } from "../config/db";
+import { db } from "../config/db.js";
 
-import { users } from "../config/db/schema/users";
+import { users } from "../config/db/schema/users.js";
 
-import { generateAccessToken, generateRefreshToken } from "../utils/generateToken";
+import { generateAccessToken, generateRefreshToken } from "../utils/generateToken.js";
 
-import { AuthRequest } from "../types";
+import { AuthRequest } from "../types/index.js";
 
 
 
