@@ -4,7 +4,7 @@ import {
   text
 } from "drizzle-orm/pg-core";
 
-import { questions } from "./questions";
+import { questions } from "./questions.js";
 
 export const options = pgTable("options", {
   id: uuid("id").defaultRandom().primaryKey(),

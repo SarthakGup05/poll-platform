@@ -7,7 +7,7 @@ import {
   timestamp
 } from "drizzle-orm/pg-core";
 
-import { users } from "./users";
+import { users } from "./users.js";
 
 export const polls = pgTable("polls", {
   id: uuid("id").defaultRandom().primaryKey(),
@@ -35,4 +35,9 @@ export const polls = pgTable("polls", {
 
   createdAt: timestamp("created_at")
     .defaultNow()
+    .notNull(),
+
+  updatedAt: timestamp("updated_at")
+    .defaultNow()
+    .notNull()
 });

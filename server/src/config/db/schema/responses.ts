@@ -1,7 +1,7 @@
 import { pgTable, uuid, boolean, timestamp, unique } from "drizzle-orm/pg-core";
 
-import { polls } from "./polls";
-import { users } from "./users";
+import { polls } from "./polls.js";
+import { users } from "./users.js";
 
 export const responses = pgTable(
   "responses",

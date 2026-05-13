@@ -6,7 +6,7 @@ import {
   integer
 } from "drizzle-orm/pg-core";
 
-import { polls } from "./polls";
+import { polls } from "./polls.js";
 
 export const questions = pgTable("questions", {
   id: uuid("id").defaultRandom().primaryKey(),

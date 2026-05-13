@@ -4,9 +4,9 @@ import {
   unique
 } from "drizzle-orm/pg-core";
 
-import { responses } from "./responses";
-import { questions } from "./questions";
-import { options } from "./options";
+import { responses } from "./responses.js";
+import { questions } from "./questions.js";
+import { options } from "./options.js";
 
 export const answers = pgTable(
   "answers",

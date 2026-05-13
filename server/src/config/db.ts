@@ -1,14 +1,21 @@
 import dotenv from "dotenv";
-import { drizzle } from "drizzle-orm/neon-http";
-import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-serverless";
+import { Pool, neonConfig } from "@neondatabase/serverless";
+import ws from "ws";
 
 dotenv.config();
 
+neonConfig.webSocketConstructor = ws;
+
 const connectionString = process.env.DATABASE_URL;
 if (!connectionString) {
-  throw new Error("No database connection string was provided to `neon()`. Perhaps an environment variable has not been set?");
+  throw new Error("No database connection string was provided. Perhaps an environment variable has not been set?");
 }
 
-const sql = neon(connectionString);
+const pool = new Pool({
+  connectionString,
+});
 
-export const db = drizzle(sql);
+export const db = drizzle(pool);
+
+console.log("USING NEON SERVERLESS DRIVER");
